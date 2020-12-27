@@ -41,3 +41,7 @@
   position: relative;
   top: -22px;
 }
+
+.loader {
+  margin: 92px 250px 92px;
+}
