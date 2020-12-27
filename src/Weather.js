@@ -5,6 +5,23 @@ import "./Weather.css";
 export default function Weather() {
   return (
     <div className="Weather">
+      <form>
+        <div className="row">
+          <div className="col-8">
+            <input
+              className="form-control"
+              type="search"
+              placeholder="Enter a city ..."
+            />
+          </div>
+          <div className="col-2">
+            <input className="btn btn-primary" type="submit" value="Search" />
+          </div>
+          <div className="col-2">
+            <input className="btn btn-success" type="submit" value="Current" />
+          </div>
+        </div>
+      </form>
       <h1>Berlin</h1>
       <ul>
         <li>Sunday, 07:00</li>
