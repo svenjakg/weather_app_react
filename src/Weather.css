@@ -1,0 +1,5 @@
+.Weather {
+  background: linear-gradient(rgb(143, 209, 216), rgb(100, 177, 193));
+  border: 1px solid rgb(135, 135, 135);
+  border-radius: 5px;
+}
