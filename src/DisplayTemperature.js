@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import ThermometerIcon from "./ThermometerIcon";
+
 import "./DisplayTemperature.css";
 
 export default function DisplayTemperature(props) {
@@ -24,6 +26,7 @@ export default function DisplayTemperature(props) {
   if (unit === "metric") {
     return (
       <div className="DisplayTemperature">
+        <ThermometerIcon temperature={props.temperature} />
         <span className="temperature">{Math.round(props.temperature)}</span>
         <ul className="temperature-details">
           <li>
@@ -46,6 +49,7 @@ export default function DisplayTemperature(props) {
   } else {
     return (
       <div className="DisplayTemperature">
+        <ThermometerIcon temperature={props.temperature} />
         <span className="temperature">
           {calculateFahrenheit(props.temperature)}
         </span>

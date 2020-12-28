@@ -24,13 +24,6 @@
   list-style: none;
 }
 
-.Weather canvas {
-  display: inline;
-  margin-right: 25px;
-  position: relative;
-  top: 5px;
-}
-
 .loader {
   margin: 92px 250px 92px;
 }

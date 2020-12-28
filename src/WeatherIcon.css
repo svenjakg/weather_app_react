@@ -1,0 +1,6 @@
+.WeatherIcon canvas {
+  display: inline;
+  margin-right: 25px;
+  position: relative;
+  top: 40px;
+}
