@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 
-import DisplayDate from "./DisplayDate";
+import WeatherInfo from "./WeatherInfo";
 
 import "./Weather.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -54,48 +54,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h1>{weatherData.city}</h1>
-        <ul>
-          <li>
-            <DisplayDate date={weatherData.date} />
-          </li>
-          <li className="text-capitalize">{weatherData.description}</li>
-        </ul>
-        <div className="row mt-3">
-          <div className="col-6">
-            <div className="clearfix">
-              <img
-                src={weatherData.icon}
-                alt={weatherData.description}
-                className="float-left"
-              />
-              <div className="float-left">
-                <span className="temperature">
-                  {Math.round(weatherData.temperature)}
-                </span>
-              </div>
-              <div className="float-left">
-                <ul className="temperature-details">
-                  <li>°C | °F</li>
-                  <li>
-                    <i class="fas fa-long-arrow-alt-up"></i>
-                    {Math.round(weatherData.temperatureMax)}°
-                  </li>
-                  <li>
-                    <i class="fas fa-long-arrow-alt-down"></i>
-                    {Math.round(weatherData.temperatureMin)}°
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <ul>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {Math.round(weatherData.wind)} m/s</li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
