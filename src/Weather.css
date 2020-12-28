@@ -30,16 +30,19 @@
 }
 
 .Weather .temperature {
-  font-size: 48px;
+  font-size: 84px;
   font-weight: bold;
   line-height: 64px;
 }
 
-.Weather .unit {
-  font-size: 16px;
-  line-height: 1;
+.Weather .temperature-details {
+  margin-left: 10px;
   position: relative;
-  top: -22px;
+}
+
+.Weather .temperature-details li {
+  font-size: 22px;
+  line-height: 22px;
 }
 
 .loader {

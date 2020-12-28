@@ -16,6 +16,8 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       temperature: response.data.main.temp,
+      temperatureMin: response.data.main.temp_min,
+      temperatureMax: response.data.main.temp_max,
       wind: response.data.wind.speed,
       icon: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
     });
@@ -67,7 +69,19 @@ export default function Weather(props) {
                 <span className="temperature">
                   {Math.round(weatherData.temperature)}
                 </span>
-                <span className="unit"> °C | °F</span>
+              </div>
+              <div className="float-left">
+                <ul className="temperature-details">
+                  <li>°C | °F</li>
+                  <li>
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                    {Math.round(weatherData.temperatureMax)}°
+                  </li>
+                  <li>
+                    <i class="fas fa-long-arrow-alt-down"></i>
+                    {Math.round(weatherData.temperatureMin)}°
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
