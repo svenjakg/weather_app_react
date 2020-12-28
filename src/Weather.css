@@ -31,23 +31,6 @@
   top: 5px;
 }
 
-.Weather .temperature {
-  font-size: 84px;
-  font-weight: bold;
-  line-height: 76px;
-}
-
-.Weather .temperature-details {
-  margin-left: 10px;
-  position: relative;
-  top: 5px;
-}
-
-.Weather .temperature-details li {
-  font-size: 22px;
-  line-height: 22px;
-}
-
 .loader {
   margin: 92px 250px 92px;
 }

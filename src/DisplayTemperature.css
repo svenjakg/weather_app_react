@@ -1,0 +1,18 @@
+.DisplayTemperature .temperature {
+  font-size: 84px;
+  font-weight: bold;
+  line-height: 76px;
+  margin-left: -200px;
+}
+
+.DisplayTemperature .temperature-details {
+  margin-left: 10px;
+  position: absolute;
+  left: 200px;
+  top: 5px;
+}
+
+.DisplayTemperature .temperature-details li {
+  font-size: 22px;
+  line-height: 22px;
+}

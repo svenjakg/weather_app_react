@@ -1,6 +1,7 @@
 import React from "react";
 
 import DisplayDate from "./DisplayDate";
+import DisplayTemperature from "./DisplayTemperature";
 import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
@@ -16,24 +17,15 @@ export default function WeatherInfo(props) {
       <div className="row mt-3">
         <div className="col-6">
           <div className="clearfix">
-            <WeatherIcon code={props.data.icon} />
             <div className="float-left">
-              <span className="temperature">
-                {Math.round(props.data.temperature)}
-              </span>
+              <WeatherIcon code={props.data.icon} />
             </div>
-            <div className="float-left">
-              <ul className="temperature-details">
-                <li>°C | °F</li>
-                <li>
-                  <i class="fas fa-long-arrow-alt-up"></i>
-                  {Math.round(props.data.temperatureMax)}°
-                </li>
-                <li>
-                  <i class="fas fa-long-arrow-alt-down"></i>
-                  {Math.round(props.data.temperatureMin)}°
-                </li>
-              </ul>
+            <div className="float-right">
+              <DisplayTemperature
+                temperature={props.data.temperature}
+                temperatureMin={props.data.temperatureMin}
+                temperatureMax={props.data.temperatureMax}
+              />
             </div>
           </div>
         </div>
