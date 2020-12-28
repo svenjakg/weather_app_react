@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 
+import DisplayDate from "./DisplayDate";
+
 import "./Weather.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
@@ -12,7 +14,7 @@ export default function Weather(props) {
     setWeatherData({
       loaded: true,
       city: response.data.name,
-      time: "Sunday, 07:00",
+      date: response.data.dt,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       temperature: response.data.main.temp,
@@ -54,7 +56,9 @@ export default function Weather(props) {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.time}</li>
+          <li>
+            <DisplayDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">

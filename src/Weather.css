@@ -25,19 +25,20 @@
 }
 
 .Weather img {
-  height: 64px;
+  height: 84px;
   margin-right: 25px;
 }
 
 .Weather .temperature {
   font-size: 84px;
   font-weight: bold;
-  line-height: 64px;
+  line-height: 76px;
 }
 
 .Weather .temperature-details {
   margin-left: 10px;
   position: relative;
+  top: 5px;
 }
 
 .Weather .temperature-details li {
