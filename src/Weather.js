@@ -8,7 +8,8 @@ import "./Weather.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 export default function Weather(props) {
-  let [weatherData, setWeatherData] = useState({ loaded: false });
+  const [weatherData, setWeatherData] = useState({ loaded: false });
+  const [city, setCity] = useState(props.searchCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -25,10 +26,27 @@ export default function Weather(props) {
     });
   }
 
+  function searchWeatherInfo() {
+    const apiKey = "f54fc282cb1623303f99a2e0a7aedd4e";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiURL).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    searchWeatherInfo();
+  }
+
+  function handleInput(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.loaded) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-8">
               <input
@@ -36,6 +54,7 @@ export default function Weather(props) {
                 type="search"
                 placeholder="Enter a city ..."
                 autoFocus="on"
+                onChange={handleInput}
               />
             </div>
             <div className="col-2">
@@ -58,10 +77,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "f54fc282cb1623303f99a2e0a7aedd4e";
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${props.searchCity}&appid=${apiKey}&units=metric`;
-
-    axios.get(apiURL).then(handleResponse);
+    searchWeatherInfo();
 
     return (
       <div className="loader">
