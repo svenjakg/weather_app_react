@@ -59,7 +59,7 @@ export default function Weather(props) {
     navigator.geolocation.getCurrentPosition(findLocation);
   }
 
-  if (weatherData.loaded && city === weatherData.city) {
+  if (weatherData.loaded) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
