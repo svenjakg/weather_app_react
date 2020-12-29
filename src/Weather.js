@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 import "./Weather.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -74,6 +75,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {
@@ -83,7 +85,7 @@ export default function Weather(props) {
       <div className="loader">
         <Loader
           type="BallTriangle"
-          color="rgb(100, 52, 157)"
+          color="rgb(255,250,250)"
           height={150}
           width={150}
         />
