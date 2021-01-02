@@ -17,7 +17,11 @@ export default function ForecastPanel(props) {
     <div className="ForecastPanel col">
       {displayTime(props.data.dt)}
       <WeatherIcon code={props.data.weather[0].icon} size={36} />
-      {Math.round(props.data.main.temp)}°C
+      <span>
+        <strong>{Math.round(props.data.main.temp_max)}</strong> |{" "}
+        {Math.round(props.data.main.temp_min)}
+      </span>
+      °C
     </div>
   );
 }

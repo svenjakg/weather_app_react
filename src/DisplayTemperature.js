@@ -26,7 +26,7 @@ export default function DisplayTemperature(props) {
   if (unit === "metric") {
     return (
       <div className="DisplayTemperature">
-        <ThermometerIcon />
+        <ThermometerIcon celsiusTemperature={Math.round(props.temperature)} />
         <span className="temperature">{Math.round(props.temperature)}</span>
         <ul className="temperature-details">
           <li>

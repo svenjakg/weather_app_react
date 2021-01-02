@@ -16,6 +16,8 @@ export default function Weather(props) {
     setWeatherData({
       loaded: true,
       city: response.data.name,
+      longitude: response.data.coord.lon,
+      latitude: response.data.coord.lat,
       date: response.data.dt,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -30,6 +32,7 @@ export default function Weather(props) {
   function searchWeatherInfo() {
     const apiKey = "f54fc282cb1623303f99a2e0a7aedd4e";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=en`;
+    // let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${weatherData.latitude}&lon=${weatherData.longitude}&appid=${apiKey}&units=metric&lang=en`;
 
     axios.get(apiURL).then(handleResponse);
   }
@@ -55,6 +58,12 @@ export default function Weather(props) {
 
   function handleCurrent(event) {
     event.preventDefault();
+
+    if ("geolocation" in navigator) {
+      console.log("Available");
+    } else {
+      console.log("Not Available");
+    }
 
     navigator.geolocation.getCurrentPosition(findLocation);
   }

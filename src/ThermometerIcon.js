@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function ThermometerIcon() {
+import PickThermometerIcon from "./PickThermometerIcon";
+
+export default function ThermometerIcon(props) {
   return (
     <div className="TherometerIcon">
       <span
@@ -11,7 +13,7 @@ export default function ThermometerIcon() {
           left: "30px",
         }}
       >
-        <i className="fas fa-thermometer-empty"></i>
+        <PickThermometerIcon temperature={props.celsiusTemperature} />
       </span>
     </div>
   );
