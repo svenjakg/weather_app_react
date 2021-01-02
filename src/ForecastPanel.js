@@ -2,6 +2,8 @@ import React from "react";
 
 import WeatherIcon from "./WeatherIcon";
 
+import "./ForecastPanel.css";
+
 function displayTime(time) {
   let formattedTime = new Date(time * 1000).getHours();
 

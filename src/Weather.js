@@ -91,7 +91,7 @@ export default function Weather(props) {
             </div>
             <div className="col-2">
               <input
-                className="btn btn-success w-100"
+                className="btn btn-light w-100"
                 type="submit"
                 value="Current"
                 onClick={handleCurrent}
