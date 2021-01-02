@@ -49,7 +49,7 @@ export default function DisplayTemperature(props) {
   } else {
     return (
       <div className="DisplayTemperature">
-        <ThermometerIcon temperature={props.temperature} />
+        <ThermometerIcon celsiusTemperature={props.temperature} />
         <span className="temperature">
           {calculateFahrenheit(props.temperature)}
         </span>
