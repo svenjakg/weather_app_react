@@ -3,8 +3,10 @@ import React from "react";
 import DisplayDate from "./DisplayDate";
 import DisplayTemperature from "./DisplayTemperature";
 import WeatherIcon from "./WeatherIcon";
+import FormattedTime from "./FormattedTime";
 
 import "./WeatherInfo.css";
+import "./FormattedTime.css";
 
 export default function WeatherInfo(props) {
   return (
@@ -19,10 +21,22 @@ export default function WeatherInfo(props) {
             <li className="text-capitalize">{props.data.description}</li>
           </ul>
         </div>
-        <div className="col-6">
+        <div className="col-3">
           <div className="float-left">
             <WeatherIcon code={props.data.icon} size={96} />
           </div>
+        </div>
+        <div className="col-3">
+          <ul className="daylight">
+            <li>
+              <i class="far fa-sun"></i>{" "}
+              <FormattedTime time={props.data.sunrise} />
+            </li>
+            <li>
+              <i class="far fa-moon"></i>{" "}
+              <FormattedTime time={props.data.sunset} />
+            </li>
+          </ul>
         </div>
       </div>
       <div className="row mt-3">
